@@ -1,14 +1,18 @@
 # This file will be used to remove comments and definitions
 # from any given file and copy the result to the clipboard
 # to ensure the code submitted to leetcode is removed of artificial runtime increase
-
+import os
 import pyperclip
 
-# Define the input file path
-num = input('What file number should be cleaned and copied?\n')
-input_file_path = f"solutions/{num}.py"
-
 output = ""
+
+# Set input file to most recently saved file in solutions/
+folder = "solutions/"
+files = os.listdir(folder)
+# sort by modified time
+files.sort(key=lambda x: os.path.getmtime(folder + x))
+# get last item in list
+input_file_path = folder + files[-1]
 
 # Open the input file in read mode
 with open(input_file_path, 'r') as input_file:
