@@ -15,5 +15,4 @@ Each solution will include the following:
 ## Note
 
 - The final runtime and memory used are not included in the solution because they are too variable between different submissions of the same exact code.
-- Slight adaptations may be made to the template provided by LeetCode (e.g. `List[int]` becomes `list[int]`)
-- Certain imports may be added to the top of the file to make the code more readable (e.g. `from typing import Optional`)
+- Certain imports may be added to the top of the file to make the code more readable (e.g. `from typing import *`)

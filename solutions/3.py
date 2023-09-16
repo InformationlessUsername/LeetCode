@@ -1,14 +1,16 @@
+from typing import *
 # 3. Longest Substring Without Repeating Characters
 # https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
 # Given a string s, find the length of the longest substring without repeating characters.
 
-# Solution logic: 
-# Create two pointers. Move right pointer from right to left. 
-# Upon encountering an already-seen character, 
+# Solution logic:
+# Create two pointers. Move right pointer from right to left.
+# Upon encountering an already-seen character,
 # move left pointer towards right until duplicates are removed
-# Track largest gap achieved between two pointers. 
+# Track largest gap achieved between two pointers.
 # That is the length of the largest substring without any repeating characters.
+
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
@@ -38,10 +40,10 @@ class Solution:
                     seen.remove(left_char)
                     left_pointer += 1
                     left_char = s[left_pointer]
-                    
+
                 # Move left pointer one right
                 left_pointer += 1
-            
+
             # Update tracked length of largest valid substring, if applicable
             largest = max(largest, right_pointer - left_pointer + 1)
             seen.add(right_char)

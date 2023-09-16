@@ -1,3 +1,4 @@
+from typing import *
 # 1. Two Sum
 # https://leetcode.com/problems/two-sum/
 
@@ -5,14 +6,16 @@
 # You may assume that each input would have exactly one solution, and you may not use the same element twice.
 # You can return the answer in any order.
 
+
 # Solution logic:
 # Iterate through the list of numbers. For each number,
 # add its index to a map of indices and values.
 # Also calculate what number would be needed to be added to the current number in order to reach the target
 # If this number is a key in the dictionary, return its value (the index of that number) along with the current index
 
+
 class Solution:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
         # dict (map) of numbers and what index they occur at in the list
         numbers_indexes = {}
         for index, num in enumerate(nums):
